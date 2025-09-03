@@ -1,0 +1,109 @@
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        document.querySelector('.nav-links').classList.remove('active');
+        document.querySelector('.hamburger').classList.remove('active');
+    });
+});
+
+// Mobile menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+
+// Simple animation on scroll
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.skill, .project-card, .contact-card').forEach(el => {
+    observer.observe(el);
+});
+
+// Add floral elements animation
+document.addEventListener('DOMContentLoaded', function() {
+    const floralBg = document.querySelector('.floral-bg');
+    for (let i = 0; i < 20; i++) {
+        const floral = document.createElement('div');
+        floral.style.position = 'absolute';
+        floral.style.width = '30px';
+        floral.style.height = '30px';
+        floral.style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%236b5b95' d='M50,30c5.5,0,10,4.5,10,10c0,5.5-4.5,10-10,10c-5.5,0-10-4.5-10-10C40,34.5,44.5,30,50,30z M50,0 c5.5,0,10,4.5,10,10c0,5.5-4.5,10-10,10c-5.5,0-10-4.5-10-10C40,4.5,44.5,0,50,0z M50,60c5.5,0,10,4.5,10,10c0,5.5-4.5,10-10,10 c-5.5,0-10-4.5-10-10C40,64.5,44.5,60,50,60z M20,30c5.5,0,10,4.5,10,10c0,5.5-4.5,10-10,10c-5.5,0-10-4.5-10-10 C10,34.5,14.5,30,20,30z M80,30c5.5,0,10,4.5,10,10c0,5.5-4.5,10-10,10c-5.5,0-10-4.5-10-10C70,34.5,74.5,30,80,30z'/%3E%3C/svg%3E\")";
+        floral.style.left = Math.random() * 100 + 'vw';
+        floral.style.top = Math.random() * 100 + 'vh';
+        floral.style.opacity = Math.random() * 0.5 + 0.1;
+        floral.style.animation = `floating ${Math.random() * 10 + 5}s ease-in-out infinite`;
+        floralBg.appendChild(floral);
+    }
+});
+
+// Form submission handling
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Simple form validation
+    const nameInput = this.querySelector('input[type="text"]');
+    const emailInput = this.querySelector('input[type="email"]');
+    const messageInput = this.querySelector('textarea');
+    
+    let isValid = true;
+    
+    if (!nameInput.value.trim()) {
+        nameInput.style.border = '2px solid #ff6b6b';
+        isValid = false;
+    } else {
+        nameInput.style.border = 'none';
+    }
+    
+    if (!emailInput.value.trim() || !emailInput.value.includes('@')) {
+        emailInput.style.border = '2px solid #ff6b6b';
+        isValid = false;
+    } else {
+        emailInput.style.border = 'none';
+    }
+    
+    if (!messageInput.value.trim()) {
+        messageInput.style.border = '2px solid #ff6b6b';
+        isValid = false;
+    } else {
+        messageInput.style.border = 'none';
+    }
+    
+    if (isValid) {
+        // In a real application, you would send the form data to a server here
+        alert('Thank you for your message! I will get back to you soon.');
+        this.reset();
+    }
+});
+
+// Add scroll effect to header
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+    } else {
+        header.style.background = 'rgba(255, 255, 255, 0.8)';
+        header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+    }
+});
