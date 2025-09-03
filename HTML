@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floral Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="floral-bg"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">Flora Designs</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="floating">Hello, I'm Aysha</h1>
+            <p>Web Designer & Developer with a passion for beautiful, functional creations</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <div class="contact-card floating">
+                    <h3>Creative Designer</h3>
+                    <p>I specialize in creating beautiful, user-friendly websites with a focus on animations and interactive elements. With over 5 years of experience, I bring ideas to life through code and design.</p>
+                    <p>When I'm not coding, you can find me painting, gardening, or enjoying a good book with a cup of tea.</p>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="profile-img" style="background: linear-gradient(45deg, var(--pastel-purple), var(--pastel-pink));"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card pulse">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Floral E-commerce</h3>
+                    <p>An online store for floral arrangements with animated product displays.</p>
+                </div>
+            </div>
+            <div class="project-card pulse">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Art Portfolio</h3>
+                    <p>Interactive portfolio for a digital artist with animated galleries.</p>
+                </div>
+            </div>
+            <div class="project-card pulse">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Cafe Website</h3>
+                    <p>Whimsical website for a boutique cafe with animated menus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-container">
+            <div class="skill floating">
+                <i class="fab fa-html5"></i>
+                <h3>HTML5</h3>
+            </div>
+            <div class="skill floating">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS3</h3>
+            </div>
+            <div class="skill floating">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill floating">
+                <i class="fas fa-paint-brush"></i>
+                <h3>UI/UX Design</h3>
+            </div>
+            <div class="skill floating">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Responsive Design</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-card floating">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>hello@floradesigns.com</p>
+                </div>
+                <div class="contact-card floating">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="contact-card floating">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>India</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <div class="contact-card">
+                    <h3>Send a Message</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo">Flora Designs</div>
+        <p>Creating beautiful digital experiences</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2023 Flora Designs. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
